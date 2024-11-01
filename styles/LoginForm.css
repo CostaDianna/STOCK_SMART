@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  background-image: linear-gradient(65deg, rgba(17, 9, 62, 0.959), #19a78f ,hsla(200, 88%, 40%, 0.58),rgba(17, 9, 62, 0.959));
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+.container {
+  position:relative;
+  padding: 10px 10px;
+  perspective: 2700px;
+  width: 80vw;
+  height: 60vh;
+  max-width: 900px;
+  margin-top: 40px;
+  border-radius: 30px;
+  display:flex;
+
+}
+.forms {
+  width: 100%;
+  height:100;
+  background-color: #19a78f;
+}
+.form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000000;
+  font-size: 15px;
+  width:100%;
+}
+.login-form,
+.signup-form {
+  width: 50%;
+  margin-right: 30px;
+  box-sizing: border-box;
+}
+.title{
+  position: relative;
+  font-size: 28px;
+  font-weight: 500;
+  color: #000000;
+}
+.title:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #cc5906;
+}
+.text {
+  font-size: 15px;
+  color: #000000;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.text a:hover,
+.text:hover {
+  text-decoration: underline;
+  color: #e61515;
+}
+.input-boxes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  cursor:pointer;
+}
+.input-box {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.button input {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background-color: #FF9F5B;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.input-box input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.button input:hover {
+  background-color: #580553;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+  border: 4px solid #4adf14;
+}
+.cover {
+  position: absolute;
+  top: 20;
+  left: 50%;
+  height: 96%;
+  width: 50%;
+  z-index: 98;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  background-color: #19a78f;
+}
+.cover img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 12;
+  filter: brightness(1.2) contrast(1.1);
+  box-shadow: 0px 4px 15px rgb(5, 10, 0%);
+  backface-visibility: hidden;
+}
+.cover .front,
+.cover .back {
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  top: 50px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+}
+.cover::after,
+.cover::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 1.0;
+  z-index: 100;
+}
+.container #flip{
+  display: none;
+}
+.cover.flipped {
+  transform: rotateY(-180deg);
+}
+.container #flip:checked ~ .cover{
+  transform: rotateY(-180deg);
+}
+.container .cover .front {
+  transform: rotateY(0deg);
+}
+.container .cover .back {
+  transform: rotateY(180deg);
+}
+.container::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: -10px;
+  left: -10px;
+  z-index: -1;
+  border: 8px solid #558d07;
+  background-image: linear-gradient (rgba(225, 85, 24, 0.694), 0.694),rgba(17, 9, 62, 0.959), #d820d8;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg) brightness(100%) blur(10px);
+  }
+  100% {
+    filter: hue-rotate(360deg) brightness(100%) blur(10px);
+  }
+}
+
+
+/* Responsividade */
+
+@media (max-width: 730px) {
+
+}
+
+
+
+
+
+
+

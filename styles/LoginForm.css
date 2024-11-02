@@ -20,11 +20,13 @@ body{
   height: 60vh;
   max-width: 900px;
   margin-top: 40px;
-  border-radius: 30px;
+  border-radius: 48px ;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display:flex;
 
 }
 .forms {
+  border-radius: 48px;
   width: 100%;
   height:100;
   background-color: #19a78f;
@@ -112,6 +114,7 @@ body{
   border: 4px solid #4adf14;
 }
 .cover {
+  border-radius: 0 48px 48px;
   position: absolute;
   top: 20;
   left: 50%;
@@ -172,12 +175,12 @@ body{
   content: "";
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 48px;
+  border: 10px solid #000;
   top: -10px;
   left: -10px;
   z-index: -1;
-  border: 8px solid #558d07;
-  background-image: linear-gradient (rgba(225, 85, 24, 0.694), 0.694),rgba(17, 9, 62, 0.959), #d820d8;
+  background-image: linear-gradient(#eb5f1eee , #09177e ,hwb(305 2% 31% / 0.703),rgb(162, 255, 0));
   animation: animate 3s linear infinite;
 }
 

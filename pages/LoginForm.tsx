@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useState } from "react";
-import "../styles/LoginForm.css";
+import "../styles/loginform.css";
 
 
 const LoginForm: React.FC = () => {

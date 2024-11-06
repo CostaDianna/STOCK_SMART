@@ -1,7 +1,9 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useState } from 'react';
 import '../styles/globals.css';
+import Link from 'next/link';
 
-export default function Fornecedor() {
+const Fornecedor: React.FC = () => {
   const [formData, setFormData] = useState({
     nomeFornecedor: '',
     cnpj: '',
@@ -11,7 +13,7 @@ export default function Fornecedor() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,6 +22,26 @@ export default function Fornecedor() {
   };
 
   return (
+    <div>
+    <div className="aviso">
+    <h1>Menu para navegar</h1>
+     <p>
+     <Link href="/" className="home-link">
+    <i className="fas fa-arrow-left"></i>Home
+    </Link>
+    </p>
+    <p>
+    <Link href="/produtos" className="home-link">
+            <i className="fas fa-arrow-left"></i> Produtos
+          </Link>
+        </p>
+        <p>
+          <Link href="/associacao" className="home-link">
+            <i className="fas fa-arrow-left"></i>Associação
+          </Link>
+        </p>
+      </div>
+
     <div className="form-container">
       <h1 className="form-title">Cadastrar Fornecedor</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -92,5 +114,7 @@ export default function Fornecedor() {
         </button>
       </form>
     </div>
+    </div>
   );
 }
+export default Fornecedor;

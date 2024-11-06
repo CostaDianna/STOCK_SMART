@@ -1,7 +1,8 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/globals.css';
-
+import Link from 'next/link';
 
 interface Produto {
   id: number;
@@ -71,6 +72,25 @@ const Produtos: React.FC = () => {
   };
 
   return (
+    <div>
+    <div className="aviso">
+    <h1>Menu para navegar</h1>
+     <p>
+     <Link href="/" className="home-link">
+    <i className="fas fa-arrow-left"></i>Home
+    </Link>
+    </p>
+    <p>
+    <Link href="/fornecedores" className="home-link">
+            <i className="fas fa-arrow-left"></i> Fornecedores
+          </Link>
+        </p>
+        <p>
+          <Link href="/associacao" className="home-link">
+            <i className="fas fa-arrow-left"></i>Associação
+          </Link>
+        </p>
+      </div>
     <div className="form-container">
       <h1 className="form-title">Cadastro de Produtos</h1>
       {erro && <p className="error">Erro ao cadastrar produto. Tente novamente.</p>}
@@ -129,7 +149,8 @@ const Produtos: React.FC = () => {
         </button>
       </form>
       </div>
+      </div>
   );
 };
 
-export default Produtos
+export default Produtos;
